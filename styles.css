@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'AR One Sans', sans-serif;
+}
+
+:root {
+    --colorDark1: #112d4e;
+    --colorDark2: #3f72af;
+    --colorLight1: #dbe2ef;
+    --colorLight2: #f9f7f7;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: #112d4e;
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+}
+
+.wrapper {
+    height: 115%;
+    width: 100%;
+    padding-bottom:1rem;
+    color: var(--colorLight2);
+    background-color: #112d4e;
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+    font-size: 3rem;
+}
+.tab-container{
+    max-width: 650px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tab{
+    cursor: pointer;
+    font-size: 1.2rem;
+    font: bolder;
+    font-weight: 600;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+}
+.tab.current-tab{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+.weather-container{
+    margin-block: 4rem;
+}
+.btn{
+    all: unset;
+    font-size: 1.2rem;
+    font: bolder;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #f9f7f7;
+    border-radius: 7px;
+    background-color: var(--colorDark2);
+    cursor: pointer;
+    padding: 10px 30px;
+}
+.sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Grant Access Contaier Styling */
+.grant-location-container{
+    display: none;
+}
+.grant-location-container.active{
+    display: flex;
+
+}
+.grant-location-container img{
+    margin-bottom: 2rem;
+}
+.grant-location-container p:first-of-type{
+    font-size: 2.5rem;
+    font: bold;
+    font-weight: 700;
+}
+.grant-location-container p:last-of-type{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+    text-align: center;
+}
+
+/* Loding Screen Styling */
+.loding-container{
+    display: none;
+    text-transform: uppercase;
+
+}
+.loding-container.active{
+    display: flex;
+}
+
+/* User Weather Info Section Styling */
+.user-info-container{
+    display: none;
+}
+.user-info-container.active{
+    display: flex;
+}
+.name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+.name p:first-of-type{
+    font-size: 2.7rem;
+    font-weight: 500;
+}
+.user-info-container p{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 200;
+}
+.user-info-container p[data-temprature]{
+    font-size: 2.75rem;
+    font-weight: 600;
+}
+.parameter-container{
+    width: 90%;
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.parameter{
+    width: 30%;
+    height: 175px;
+    max-width: 200px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    padding: 2rem ;
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0;
+    align-items: center;
+}
+.parameter img{
+    width: 50px;
+    height: 50px;
+}
+.parameter p:first-of-type{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.parameter P:last-of-type{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 200;
+}
+/* Search bar Styling */
+.form-container{
+    display: none;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+    margin-bottom: 3rem;
+}
+.form-container input{
+    all: unset;
+    width: calc(100% - 80px);
+    /* color: rgba(255, 255, 255, 0.5); */
+    font-size: 1.1rem;
+    font: bold;
+    font-weight: 500;
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+.form-container input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+    font: bold;
+    font-weight: 500;
+    font-size: 1.1rem;
+
+}
+.form-container input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+}
+.form-container button{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: unset;
+}
+
+.form-container.active{
+    display: flex;
+}
+.error-container{
+    display: none;
+}
+.error-container.active{
+    display: flex;
+}
+
+
